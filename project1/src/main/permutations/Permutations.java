@@ -3,7 +3,7 @@ package main.permutations;
 import java.util.ArrayList;
 import java.util.List;
 
-import main.utils.ArrayUtils;
+import static main.utils.ArrayUtils.swap;
 
 /**
  * Generates all permutations of the integers 1 through n using Heap's
@@ -53,9 +53,9 @@ public final class Permutations {
 	}
 
 	/**
-	 * Recursively generates a list of all permutations containing numbers 1 through
-	 * n using Heap's algorithm, and adds a clone of each new arrangement to the
-	 * results list.
+	 * Recursively generates a list of all permutations containing numbers 1
+	 * through n using Heap's algorithm, and adds a clone of each new
+	 * arrangement to the results list.
 	 * 
 	 * Source: Heap's algorithm on Wikipedia
 	 * 
@@ -72,9 +72,9 @@ public final class Permutations {
 
 		for (int i = 0; i < k - 1; i++) {
 			if (k % 2 == 0) {
-				ArrayUtils.swap(elements, i, k - 1);
+				swap(elements, i, k - 1);
 			} else {
-				ArrayUtils.swap(elements, 0, k - 1);
+				swap(elements, 0, k - 1);
 			}
 
 			result.add(elements.clone());

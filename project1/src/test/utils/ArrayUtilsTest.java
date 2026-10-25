@@ -1,6 +1,8 @@
 package test.utils;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -14,6 +16,10 @@ import org.junit.jupiter.api.Test;
 import main.utils.ArrayUtils;
 
 class ArrayUtilsTest {
+
+	// -------------------------------------------------------------------------
+	// Primitive arrays
+	// -------------------------------------------------------------------------
 
 	@Nested
 	@DisplayName("primitive array swap")
@@ -50,6 +56,10 @@ class ArrayUtilsTest {
 
 	}
 
+	// -------------------------------------------------------------------------
+	// Generic arrays
+	// -------------------------------------------------------------------------
+
 	@Nested
 	@DisplayName("generic array swap")
 	class GenericArraySwap {
@@ -84,6 +94,10 @@ class ArrayUtilsTest {
 		}
 
 	}
+
+	// -------------------------------------------------------------------------
+	// Lists
+	// -------------------------------------------------------------------------
 
 	@Nested
 	@DisplayName("list swap")

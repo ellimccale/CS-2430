@@ -1,6 +1,9 @@
 package test.permutations;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.Arrays;
 import java.util.HashSet;
@@ -58,7 +61,8 @@ class PermutationsTest {
 				IllegalArgumentException.class, () -> {
 					permutations.generatePermutations(n);
 				});
-		assertEquals("n must be positive and no larger than 10", exception.getMessage());
+		assertEquals("n must be positive and no larger than 10",
+				exception.getMessage());
 	}
 
 	@Test
@@ -96,11 +100,13 @@ class PermutationsTest {
 			int[] clone = permutation.clone();
 			Arrays.sort(clone);
 			assertArrayEquals(expected, clone,
-					"entry is not an arrangement of 1..n: " + Arrays.toString(permutation));
+					"entry is not an arrangement of 1..n: "
+					+ Arrays.toString(permutation));
 
 			// Store by string value
 			boolean isNew = seen.add(Arrays.toString(permutation));
-			assertTrue(isNew, "duplicate permutation: " + Arrays.toString(permutation));
+			assertTrue(isNew, "duplicate permutation: "
+					+ Arrays.toString(permutation));
 		}
 	}
 
