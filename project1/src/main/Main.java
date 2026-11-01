@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import main.permutations.Permutations;
-import main.sort.MergeSort;
+import main.sort.QuickSort;
 
 /**
  * @author Elli Steck
@@ -26,7 +26,7 @@ public class Main {
 		System.out.println();
 
 		List<int[]> LClone = new ArrayList<>(L);
-		MergeSort.sort(LClone);
+		QuickSort.sort(LClone);
 		for (int[] list : LClone) {
 			System.out.print(Arrays.toString(list));
 		}
