@@ -1,10 +1,14 @@
 package main;
 
-import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.function.Consumer;
 
-import main.permutations.Permutations;
+import static main.permutations.Permutations.generatePermutations;
+import main.sort.HeapSort;
+import main.sort.MergeSort;
+import main.sort.QuickSort;
 import main.sort.ShakerSort;
 
 /**
@@ -16,22 +20,41 @@ public class Main {
 
 	public static void main(String[] args) {
 
-		Permutations P = new Permutations();
-		List<int[]> L = P.generatePermutations(3);
+		Map<String, Consumer<int[]>> sortTypes = new LinkedHashMap<>();
+		sortTypes.put("HeapSort", HeapSort::sort);
+		sortTypes.put("MergeSort", MergeSort::sort);
+		sortTypes.put("QuickSort", QuickSort::sort);
+		sortTypes.put("ShakerSort", ShakerSort::sort);
 
-		// Visual sanity check that these results match the JS version
-		for (int[] list : L) {
-			System.out.print(Arrays.toString(list));
+		List<int[]> L = generatePermutations();
+
+		generateResultsTable(sortTypes);
+
+	}
+
+	private static void generateResultsTable(Map<String, Consumer<int[]>> sortTypes) {
+		final int COL_WIDTH = 18;
+
+		String divider = "-".repeat(COL_WIDTH * (INPUT_SIZES.length + 1));
+		String cell = "%-" + COL_WIDTH + "s";
+
+		System.out.println("Comparison counts (min / max / avg)");
+		System.out.println(divider);
+		System.out.printf(cell, "Algorithm");
+		for (int n : INPUT_SIZES) {
+			System.out.printf(cell, "n = " + n);
 		}
-		System.out.println();
+		System.out.printf("%n%s%n", divider);
 
-		List<int[]> LClone = new ArrayList<>(L);
-		for (int[] list : LClone) {
-			ShakerSort.sort(list);
-			System.out.print(Arrays.toString(list));
+		for (Map.Entry<String, Consumer<int[]>> entry : sortTypes.entrySet()) {
+			System.out.printf(cell, entry.getKey());
+
+			for (int n : INPUT_SIZES) {
+				System.out.printf(cell, "0 / 0 / 0");
+			}
+
+			System.out.printf("%n%s%n", divider);
 		}
-		System.out.println();
-
 	}
 
 }

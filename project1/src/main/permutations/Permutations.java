@@ -7,13 +7,16 @@ import static main.utils.ArrayUtils.swap;
 
 /**
  * Generates all permutations of the integers 1 through n using Heap's
- * algorithm. n defaults to 4.
+ * algorithm. n defaults to 4. This class is not meant to be instantiated.
  * 
  * @author Elli Steck
  */
 public final class Permutations {
 
 	private static final int MAX_N = 10;
+
+	private Permutations() {
+	}
 
 	/**
 	 * Generates all permutations of the integers 1 through 4.
