@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
-import main.permutations.Permutations;
+import static main.permutations.Permutations.generatePermutations;
 
 /**
  * Shared helpers for the sort tests. This class is not meant to be
@@ -24,7 +24,7 @@ public final class SortTestHelper {
 	 * @return a new array containing one permutation of 1..n
 	 */
 	public static int[] shuffledPermutation(int n, long seed) {
-		List<int[]> list = new Permutations().generatePermutations(n);
+		List<int[]> list = generatePermutations(n);
 		int index = new Random(seed).nextInt(list.size());
 
 		return list.get(index).clone();

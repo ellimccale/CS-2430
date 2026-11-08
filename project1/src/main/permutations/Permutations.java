@@ -20,7 +20,7 @@ public final class Permutations {
 	 * 
 	 * @return a list containing all permutations
 	 */
-	public List<int[]> generatePermutations() {
+	public static List<int[]> generatePermutations() {
 		return generatePermutations(4);
 	}
 
@@ -33,7 +33,7 @@ public final class Permutations {
 	 *                                  (n > 10 may exceed heap capacity and
 	 *                                  n > 12 exceeds list size)
 	 */
-	public List<int[]> generatePermutations(int n) {
+	public static List<int[]> generatePermutations(int n) {
 		if (n < 1 || n > MAX_N) {
 			throw new IllegalArgumentException(
 					"n must be positive and no larger than " + MAX_N);
@@ -63,7 +63,7 @@ public final class Permutations {
 	 * @param elements the array of elements being permuted
 	 * @param result   the resulting list of permutations
 	 */
-	private void permute(int k, int[] elements, List<int[]> result) {
+	private static void permute(int k, int[] elements, List<int[]> result) {
 		if (k == 1) {
 			return;
 		}

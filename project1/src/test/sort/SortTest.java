@@ -8,26 +8,18 @@ import static test.sort.SortTestHelper.sortedCopy;
 import java.util.function.Consumer;
 import java.util.stream.Stream;
 
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
-import main.permutations.Permutations;
+import static main.permutations.Permutations.generatePermutations;
 import main.sort.HeapSort;
 import main.sort.MergeSort;
 import main.sort.QuickSort;
 import main.sort.ShakerSort;
 
 class SortTest {
-
-	private Permutations permutations;
-
-	@BeforeEach
-	void setUp() {
-		permutations = new Permutations();
-	}
 
 	static Stream<Arguments> sortTypes() {
 		return Stream.of(
@@ -44,7 +36,7 @@ class SortTest {
 	void sorts_every_permutation(String name, Consumer<int[]> sortType) {
 		int[] expected = { 1, 2, 3 };
 
-		for (int[] permutation : permutations.generatePermutations(3)) {
+		for (int[] permutation : generatePermutations(3)) {
 			int[] actual = permutation.clone();
 
 			sortType.accept(actual);

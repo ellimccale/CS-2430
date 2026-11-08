@@ -10,22 +10,14 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
-import main.permutations.Permutations;
+import static main.permutations.Permutations.generatePermutations;
 
 class PermutationsTest {
-
-	private Permutations permutations;
-
-	@BeforeEach
-	void setUp() {
-		permutations = new Permutations();
-	}
 
 	// -------------------------------------------------------------------------
 	// Helpers
@@ -59,7 +51,7 @@ class PermutationsTest {
 	void invalid_argument_throws_expected_exception(int n) {
 		IllegalArgumentException exception = assertThrows(
 				IllegalArgumentException.class, () -> {
-					permutations.generatePermutations(n);
+					generatePermutations(n);
 				});
 		assertEquals("n must be positive and no larger than 10",
 				exception.getMessage());
@@ -76,7 +68,7 @@ class PermutationsTest {
 					{ 1, 3, 2 },
 					{ 2, 3, 1 },
 					{ 3, 2, 1 } });
-		List<int[]> actual = permutations.generatePermutations(3);
+		List<int[]> actual = generatePermutations(3);
 		assertArrayEquals(expected.toArray(), actual.toArray());
 	}
 
@@ -85,7 +77,7 @@ class PermutationsTest {
 	@DisplayName("should generate the expected permutations of n")
 	void generates_expected_permutations_of_n(int n) {
 		int[] expected = identity(n);
-		List<int[]> actual = permutations.generatePermutations(n);
+		List<int[]> actual = generatePermutations(n);
 
 		// Size should be correct
 		assertEquals(factorial(n), actual.size());
@@ -113,8 +105,8 @@ class PermutationsTest {
 	@Test
 	@DisplayName("should default to n=4 when no arguments are passed")
 	void no_args_defaults_to_n_equals_4() {
-		List<int[]> expected = permutations.generatePermutations(4);
-		List<int[]> actual = permutations.generatePermutations();
+		List<int[]> expected = generatePermutations(4);
+		List<int[]> actual = generatePermutations();
 
 		// Size should be correct
 		assertEquals(factorial(4), actual.size());
