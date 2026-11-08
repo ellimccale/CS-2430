@@ -1,14 +1,10 @@
 package test.sort;
 
-import static org.junit.Assert.assertSame;
-import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static test.sort.SortTestHelper.shuffledPermutations;
+import static test.sort.SortTestHelper.shuffledPermutation;
 import static test.sort.SortTestHelper.sortedCopy;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.function.Consumer;
 import java.util.stream.Stream;
 
@@ -19,6 +15,7 @@ import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
 import main.permutations.Permutations;
+import main.sort.HeapSort;
 import main.sort.MergeSort;
 import main.sort.QuickSort;
 
@@ -33,67 +30,68 @@ class SortTest {
 
 	static Stream<Arguments> sortTypes() {
 		return Stream.of(
-			Arguments.of("MergeSort", (Consumer<List<int[]>>) MergeSort::sort),
-			Arguments.of("QuickSort", (Consumer<List<int[]>>) QuickSort::sort)
+			Arguments.of("MergeSort", (Consumer<int[]>) MergeSort::sort),
+			Arguments.of("QuickSort", (Consumer<int[]>) QuickSort::sort),
+			Arguments.of("HeapSort", (Consumer<int[]>) HeapSort::sort)
 		);
 	}
 
 	@ParameterizedTest(name = "{0}")
 	@MethodSource("sortTypes")
-	@DisplayName("should sort shuffled permutations in the expected order")
-	void sorts_shuffled_permutations(String name, Consumer<List<int[]>> sortType) {
-		List<int[]> expected = sortedCopy(permutations.generatePermutations(3));
-		List<int[]> actual = shuffledPermutations(3, 42L);
+	@DisplayName("should sort every permutation of 1..3 into ascending order")
+	void sorts_every_permutation(String name, Consumer<int[]> sortType) {
+		int[] expected = { 1, 2, 3 };
 
-		sortType.accept(actual);
+		for (int[] permutation : permutations.generatePermutations(3)) {
+			int[] actual = permutation.clone();
 
-		// Size should remain the same
-		assertEquals(expected.size(), actual.size());
+			sortType.accept(actual);
 
-		// Order should be as expected
-		assertArrayEquals(expected.toArray(), actual.toArray());
+			// Size should remain the same
+			assertEquals(expected.length, actual.length);
+
+			// Order should be as expected
+			assertArrayEquals(expected, actual);
+		}
 	}
 
 	@ParameterizedTest(name = "{0}")
 	@MethodSource("sortTypes")
-	@DisplayName("should leave an already sorted list unchanged")
-	void sorted_input_unchanged(String name, Consumer<List<int[]>> sortType) {
-		List<int[]> expected = sortedCopy(permutations.generatePermutations(4));
-		List<int[]> actual = new ArrayList<>(expected);
+	@DisplayName("should leave an already sorted array unchanged")
+	void sorted_input_unchanged(String name, Consumer<int[]> sortType) {
+		int[] expected = { 1, 2, 3, 4 };
+		int[] actual = expected.clone();
 
 		sortType.accept(actual);
 
-		assertArrayEquals(expected.toArray(), actual.toArray());
+		assertArrayEquals(expected, actual);
 	}
 
 	@ParameterizedTest(name = "{0}")
 	@MethodSource("sortTypes")
-	@DisplayName("should handle empty and single-element lists")
-	void handles_trivial_sizes(String name, Consumer<List<int[]>> sortType) {
-		List<int[]> empty = new ArrayList<>();
+	@DisplayName("should handle empty and single-element arrays")
+	void handles_trivial_sizes(String name, Consumer<int[]> sortType) {
+		int[] empty = {};
 		sortType.accept(empty);
-		assertTrue(empty.isEmpty());
+		assertEquals(0, empty.length);
 
-		int[] only = { 1 };
-		List<int[]> single = new ArrayList<>(List.of(only));
+		int[] single = { 1 };
 		sortType.accept(single);
-		assertEquals(1, single.size());
-		assertSame(only, single.get(0));
+		assertArrayEquals(new int[] { 1 }, single);
 	}
 
 	@ParameterizedTest(name = "{0}")
 	@MethodSource("sortTypes")
-	@DisplayName("should match List.sort for many sizes and seeds")
-	void matches_reference_sort(String name, Consumer<List<int[]>> sortType) {
-		for (int n = 1; n <= 7; n++) {
+	@DisplayName("should match Arrays.sort for many sizes and seeds")
+	void matches_reference_sort(String name, Consumer<int[]> sortType) {
+		for (int n = 1; n <= 8; n++) {
 			for (long seed = 0; seed < 5; seed++) {
-				List<int[]> actual = shuffledPermutations(n, seed);
-				List<int[]> expected = sortedCopy(actual);
+				int[] actual = shuffledPermutation(n, seed);
+				int[] expected = sortedCopy(actual);
 
 				sortType.accept(actual);
 
-				assertArrayEquals(expected.toArray(), actual.toArray(),
-						"n=" + n + ", seed=" + seed);
+				assertArrayEquals(expected, actual, "n=" + n + ", seed=" + seed);
 			}
 		}
 	}
