@@ -18,6 +18,7 @@ import main.permutations.Permutations;
 import main.sort.HeapSort;
 import main.sort.MergeSort;
 import main.sort.QuickSort;
+import main.sort.ShakerSort;
 
 class SortTest {
 
@@ -32,7 +33,8 @@ class SortTest {
 		return Stream.of(
 			Arguments.of("MergeSort", (Consumer<int[]>) MergeSort::sort),
 			Arguments.of("QuickSort", (Consumer<int[]>) QuickSort::sort),
-			Arguments.of("HeapSort", (Consumer<int[]>) HeapSort::sort)
+			Arguments.of("HeapSort", (Consumer<int[]>) HeapSort::sort),
+			Arguments.of("ShakerSort", (Consumer<int[]>) ShakerSort::sort)
 		);
 	}
 

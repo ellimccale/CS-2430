@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import main.permutations.Permutations;
-import main.sort.HeapSort;
+import main.sort.ShakerSort;
 
 /**
  * @author Elli Steck
@@ -27,7 +27,7 @@ public class Main {
 
 		List<int[]> LClone = new ArrayList<>(L);
 		for (int[] list : LClone) {
-			HeapSort.sort(list);
+			ShakerSort.sort(list);
 			System.out.print(Arrays.toString(list));
 		}
 		System.out.println();
