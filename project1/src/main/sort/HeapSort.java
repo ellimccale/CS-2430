@@ -1,14 +1,21 @@
+/*
+ * Name:        Elli Steck
+ * Course:      CS 2430, Section 501
+ * Project:     Programming Project 1 – Summer 2026
+ * File:        HeapSort.java
+ * Description: Implements heap sort for arrays of integers, using a max-heap
+ * 				stored in the array itself, and returns the comparison count.
+ */
 package main.sort;
 
 import static main.utils.ArrayUtils.swap;
 
 /**
- * Heap sort for arrays of integers, using a max-heap stored in the array
- * itself. This class is not meant to be instantiated.
+ * Implements heap sort for arrays of integers, using a max-heap stored in the
+ * array itself, and returns the comparison count. This class is not meant to be
+ * instantiated.
  *
  * Source: Heap Sort on GeeksforGeeks
- * 
- * @author Elli Steck
  */
 public final class HeapSort {
 

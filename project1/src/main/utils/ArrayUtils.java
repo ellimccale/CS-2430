@@ -1,10 +1,16 @@
+/*
+ * Name:        Elli Steck
+ * Course:      CS 2430, Section 501
+ * Project:     Programming Project 1 – Summer 2026
+ * File:        ArrayUtils.java
+ * Description: Static utility methods for performing operations on arrays
+ * 				and lists.
+ */
 package main.utils;
 
 /**
  * Static utility methods for performing operations on arrays and lists. This
  * class is not meant to be instantiated.
- * 
- * @author Elli Steck
  */
 public final class ArrayUtils {
 

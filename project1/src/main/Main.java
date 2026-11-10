@@ -1,3 +1,11 @@
+/*
+ * Name:        Elli Steck
+ * Course:      CS 2430, Section 501
+ * Project:     Programming Project 1 – Summer 2026
+ * File:        Main.java
+ * Description: Runs all four sorts on every permutation of n = 4, 6, and 8, and
+ * 				prints the results table.
+ */
 package main;
 
 import java.util.IntSummaryStatistics;
@@ -12,7 +20,8 @@ import main.sort.QuickSort;
 import main.sort.ShakerSort;
 
 /**
- * @author Elli Steck
+ * Entry-point to the program. Runs all four sorts on every permutation of n = 4,
+ * 6, and 8, and prints the results table.
  */
 public class Main {
 

@@ -1,14 +1,20 @@
+/*
+ * Name:        Elli Steck
+ * Course:      CS 2430, Section 501
+ * Project:     Programming Project 1 – Summer 2026
+ * File:        ShakerSort.java
+ * Description: Implements shaker sort (or cocktail sort) for arrays of integers
+ * 				and returns the comparison count.
+ */
 package main.sort;
 
 import static main.utils.ArrayUtils.swap;
 
 /**
- * Shaker sort (or cocktail sort) for arrays of integers. This class is not
- * meant to be instantiated.
+ * Implements shaker sort (or cocktail sort) for arrays of integers and returns
+ * the comparison count. This class is not meant to be instantiated.
  * 
  * Source: Cocktail shaker sort on Wikipedia
- * 
- * @author Elli Steck
  */
 public final class ShakerSort {
 

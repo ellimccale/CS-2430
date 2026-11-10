@@ -1,14 +1,20 @@
+/*
+ * Name:        Elli Steck
+ * Course:      CS 2430, Section 501
+ * Project:     Programming Project 1 – Summer 2026
+ * File:        QuickSort.java
+ * Description: Implements quick sort for arrays of integers and returns the
+ * 				comparison count.
+ */
 package main.sort;
 
 import static main.utils.ArrayUtils.swap;
 
 /**
- * Quick sort for arrays of integers. This class is not meant to be
- * instantiated.
+ * Implements quick sort for arrays of integers and returns the comparison
+ * count. This class is not meant to be instantiated.
  *
  * Source: Quick Sort on GeeksforGeeks
- * 
- * @author Elli Steck
  */
 public final class QuickSort {
 

@@ -1,3 +1,10 @@
+/*
+ * Name:        Elli Steck
+ * Course:      CS 2430, Section 501
+ * Project:     Programming Project 1 – Summer 2026
+ * File:        SortTest.java
+ * Description: Unit tests for the four sorting algorithms.
+ */
 package test.sort;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;

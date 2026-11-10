@@ -1,12 +1,18 @@
+/*
+ * Name:        Elli Steck
+ * Course:      CS 2430, Section 501
+ * Project:     Programming Project 1 – Summer 2026
+ * File:        MergeSort.java
+ * Description: Implements top-down merge sort for arrays of integers and
+ * 				returns the comparison count.
+ */
 package main.sort;
 
 /**
- * Top-down merge sort for arrays of integers. This class is not meant to be
- * instantiated.
+ * Implements top-down merge sort for arrays of integers and returns the
+ * comparison count. This class is not meant to be instantiated.
  *
  * Source: Merge Sort on GeeksforGeeks
- * 
- * @author Elli Steck
  */
 public final class MergeSort {
 
