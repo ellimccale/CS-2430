@@ -17,19 +17,30 @@ public final class MergeSort {
 	 * Entry-point to sort the given array in ascending order.
 	 *
 	 * @param array the array to sort; modified in place
+	 * @return the count of the current sort run
 	 */
-	public static void sort(int[] array) {
-		sort(array, 0, array.length - 1);
+	public static int sort(int[] array) {
+		ComparisonCounter counter = new ComparisonCounter();
+
+		sort(array, 0, array.length - 1, counter);
+
+		return counter.getCount();
 	}
 
 	/**
 	 * Recursively sorts the range [l, r] of the array.
 	 *
-	 * @param array the array being sorted
-	 * @param l     index of the first element in the range (inclusive)
-	 * @param r     index of the last element in the range (inclusive)
+	 * @param array   the array being sorted
+	 * @param l       index of the first element in the range (inclusive)
+	 * @param r       index of the last element in the range (inclusive)
+	 * @param counter the counter for the current sort run
 	 */
-	private static void sort(int[] array, int l, int r) {
+	private static void sort(
+		int[] array,
+		int l,
+		int r,
+		ComparisonCounter counter
+	) {
 		if (l >= r) {
 			return;
 		}
@@ -38,23 +49,30 @@ public final class MergeSort {
 		int m = l + (r - l) / 2;
 
 		// Sort the first and second halves
-		sort(array, l, m);
-		sort(array, m + 1, r);
+		sort(array, l, m, counter);
+		sort(array, m + 1, r, counter);
 
 		// Merge the sorted halves
-		merge(array, l, m, r);
+		merge(array, l, m, r, counter);
 	}
 
 	/**
 	 * Merges the two sorted ranges [l, m] and [m + 1, r] of the array into a
 	 * single sorted range [l, r].
 	 *
-	 * @param array the array containing both ranges
-	 * @param l     index of the first element of the left range
-	 * @param m     index of the last element of the left range
-	 * @param r     index of the last element of the right range
+	 * @param array   the array containing both ranges
+	 * @param l       index of the first element of the left range
+	 * @param m       index of the last element of the left range
+	 * @param r       index of the last element of the right range
+	 * @param counter the counter for the current sort run
 	 */
-	private static void merge(int[] array, int l, int m, int r) {
+	private static void merge(
+		int[] array,
+		int l,
+		int m,
+		int r,
+		ComparisonCounter counter
+	) {
 		int n1 = m - l + 1;
 		int n2 = r - m;
 
@@ -79,7 +97,7 @@ public final class MergeSort {
 			int leftEl = left[i];
 			int rightEl = right[j];
 
-			if (leftEl <= rightEl) {
+			if (counter.compare(leftEl, rightEl) <= 0) {
 				array[k] = leftEl;
 				i++;
 			} else {

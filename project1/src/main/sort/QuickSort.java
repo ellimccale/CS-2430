@@ -19,28 +19,39 @@ public final class QuickSort {
 	 * Entry-point to sort the given array in ascending order.
 	 *
 	 * @param array the array to sort; modified in place
+	 * @return the count of the current sort run
 	 */
-	public static void sort(int[] array) {
-		sort(array, 0, array.length - 1);
+	public static int sort(int[] array) {
+		ComparisonCounter counter = new ComparisonCounter();
+
+		sort(array, 0, array.length - 1, counter);
+
+		return counter.getCount();
 	}
 
 	/**
 	 * Recursively sorts the range [l, h] of the array.
 	 *
-	 * @param array the array being sorted
-	 * @param l     index of the first element in the range (inclusive)
-	 * @param h     index of the last element in the range (inclusive)
+	 * @param array   the array being sorted
+	 * @param l       index of the first element in the range (inclusive)
+	 * @param h       index of the last element in the range (inclusive)
+	 * @param counter the counter for the current sort run
 	 */
-	private static void sort(int[] array, int l, int h) {
+	private static void sort(
+		int[] array,
+		int l,
+		int h,
+		ComparisonCounter counter
+	) {
 		if (l < h) {
 			// Index returned from the last pivot
-			int pi = partition(array, l, h);
+			int pi = partition(array, l, h, counter);
 
 			// Sort through smaller elements
-			sort(array, l, pi - 1);
+			sort(array, l, pi - 1, counter);
 
 			// Sort through greater-than or equal elements
-			sort(array, pi + 1, h);
+			sort(array, pi + 1, h, counter);
 		}
 	}
 
@@ -50,13 +61,19 @@ public final class QuickSort {
 	 * to the pivot, every element right of it is greater than the pivot, and
 	 * the pivot sits at the returned index in its final sorted position.
 	 *
-	 * @param array the array containing the range to partition
-	 * @param l     index of the first element in the range (inclusive)
-	 * @param h     index of the last element in the range (inclusive); also the
-	 *              pivot's starting index
+	 * @param array   the array containing the range to partition
+	 * @param l       index of the first element in the range (inclusive)
+	 * @param h       index of the last element in the range (inclusive); also
+	 *                the pivot's starting index
+	 * @param counter the counter for the current sort run
 	 * @return the final index of the pivot
 	 */
-	private static int partition(int[] array, int l, int h) {
+	private static int partition(
+		int[] array,
+		int l,
+		int h,
+		ComparisonCounter counter
+	) {
 		int pivot = array[h];
 
 		// Index of the smaller element
@@ -64,7 +81,7 @@ public final class QuickSort {
 
 		// Traverse low..high and move all smaller elements to the left
 		for (int j = l; j <= h - 1; j++) {
-			if (array[j] <= pivot) {
+			if (counter.compare(array[j], pivot) <= 0) {
 				i++;
 				swap(array, i, j);
 			}

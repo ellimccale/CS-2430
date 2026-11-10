@@ -19,8 +19,11 @@ public final class ShakerSort {
 	 * Entry-point to sort the given array in ascending order.
 	 *
 	 * @param array the array to sort; modified in place
+	 * @return the count of the current sort run
 	 */
-	public static void sort(int[] array) {
+	public static int sort(int[] array) {
+		ComparisonCounter counter = new ComparisonCounter();
+
 		boolean swapped = true;
 
 		while (swapped) {
@@ -30,7 +33,7 @@ public final class ShakerSort {
 			// Forward pass: swap adjacent out-of-order elements from left to
 			// right
 			for (int i = 0; i <= array.length - 2; i++) {
-				if (array[i] > array[i + 1]) {
+				if (counter.compare(array[i], array[i + 1]) > 0) {
 					swap(array, i, i + 1);
 					swapped = true;
 				}
@@ -46,12 +49,14 @@ public final class ShakerSort {
 			// Backward pass: swap adjacent out-of-order elements from right to
 			// left
 			for (int j = array.length - 2; j >= 0; j--) {
-				if (array[j] > array[j + 1]) {
+				if (counter.compare(array[j], array[j + 1]) > 0) {
 					swap(array, j, j + 1);
 					swapped = true;
 				}
 			}
 		}
+
+		return counter.getCount();
 	}
 
 }

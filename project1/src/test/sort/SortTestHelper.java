@@ -10,7 +10,7 @@ import static main.permutations.Permutations.generatePermutations;
  * Shared helpers for the sort tests. This class is not meant to be
  * instantiated.
  */
-public final class SortTestHelper {
+final class SortTestHelper {
 
 	private SortTestHelper() {
 	}
@@ -23,7 +23,7 @@ public final class SortTestHelper {
 	 * @param seed the seed for the random number generator
 	 * @return a new array containing one permutation of 1..n
 	 */
-	public static int[] shuffledPermutation(int n, long seed) {
+	static int[] shuffledPermutation(int n, long seed) {
 		List<int[]> list = generatePermutations(n);
 		int index = new Random(seed).nextInt(list.size());
 
@@ -37,7 +37,7 @@ public final class SortTestHelper {
 	 * @return a new, sorted array containing the same elements as the passed
 	 *         array
 	 */
-	public static int[] sortedCopy(int[] array) {
+	static int[] sortedCopy(int[] array) {
 		int[] copy = array.clone();
 		Arrays.sort(copy);
 
