@@ -50,7 +50,7 @@ public final class QuickSort {
 		ComparisonCounter counter
 	) {
 		if (l < h) {
-			// Index returned from the last pivot
+			// Final index of the pivot for this range
 			int pi = partition(array, l, h, counter);
 
 			// Sort through smaller elements
@@ -93,9 +93,9 @@ public final class QuickSort {
 			}
 		}
 
+		// Move the pivot into its final sorted position
 		swap(array, i + 1, h);
 
-		// Move the pivot point to the right of the sorted smaller elements
 		return i + 1;
 	}
 
