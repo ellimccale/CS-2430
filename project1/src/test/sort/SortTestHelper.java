@@ -1,6 +1,6 @@
 /*
  * Name:        Elli Steck
- * Course:      CS 2430, Section 501
+ * Course:      CS-2430, Section 501
  * Project:     Programming Project 1 – Summer 2026
  * File:        SortTestHelper.java
  * Description: Shared helper methods for the sort tests.

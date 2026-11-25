@@ -1,6 +1,6 @@
 /*
  * Name:        Elli Steck
- * Course:      CS 2430, Section 501
+ * Course:      CS-2430, Section 501
  * Project:     Programming Project 1 – Summer 2026
  * File:        ArrayUtilsTest.java
  * Description: Unit tests for the array and list swap utilities.
