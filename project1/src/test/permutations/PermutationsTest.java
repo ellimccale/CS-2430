@@ -56,25 +56,17 @@ class PermutationsTest {
 	@ValueSource(ints = { -1, 0, 11 })
 	@DisplayName("should throw an IllegalArgumentException when n < 1 or > 10")
 	void invalid_argument_throws_expected_exception(int n) {
-		IllegalArgumentException exception = assertThrows(
-				IllegalArgumentException.class, () -> {
-					generatePermutations(n);
-				});
-		assertEquals("n must be positive and no larger than 10",
-				exception.getMessage());
+		IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> {
+			generatePermutations(n);
+		});
+		assertEquals("n must be positive and no larger than 10", exception.getMessage());
 	}
 
 	@Test
 	@DisplayName("should generate the expected order for Heap's algorithm")
 	void generates_expected_permutations_order_for_heaps_algorithm() {
 		List<int[]> expected = Arrays
-				.asList(new int[][] {
-					{ 1, 2, 3 },
-					{ 2, 1, 3 },
-					{ 3, 1, 2 },
-					{ 1, 3, 2 },
-					{ 2, 3, 1 },
-					{ 3, 2, 1 } });
+				.asList(new int[][] { { 1, 2, 3 }, { 2, 1, 3 }, { 3, 1, 2 }, { 1, 3, 2 }, { 2, 3, 1 }, { 3, 2, 1 } });
 		List<int[]> actual = generatePermutations(3);
 		assertArrayEquals(expected.toArray(), actual.toArray());
 	}
@@ -98,14 +90,11 @@ class PermutationsTest {
 			// Compare sorted arrangement with defensive clone
 			int[] clone = permutation.clone();
 			Arrays.sort(clone);
-			assertArrayEquals(expected, clone,
-					"entry is not an arrangement of 1..n: "
-					+ Arrays.toString(permutation));
+			assertArrayEquals(expected, clone, "entry is not an arrangement of 1..n: " + Arrays.toString(permutation));
 
 			// Store by string value
 			boolean isNew = seen.add(Arrays.toString(permutation));
-			assertTrue(isNew, "duplicate permutation: "
-					+ Arrays.toString(permutation));
+			assertTrue(isNew, "duplicate permutation: " + Arrays.toString(permutation));
 		}
 	}
 

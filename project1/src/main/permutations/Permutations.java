@@ -38,14 +38,13 @@ public final class Permutations {
 	 * 
 	 * @param n the length of the list to generate
 	 * @return a list containing all permutations
-	 * @throws IllegalArgumentException when n is less than 1 or greater than 10
-	 *                                  (n > 10 may exceed heap capacity and
-	 *                                  n > 12 exceeds list size)
+	 * @throws IllegalArgumentException when n is less than 1 or greater than 10 (n
+	 *                                  > 10 may exceed heap capacity and n > 12
+	 *                                  exceeds list size)
 	 */
 	public static List<int[]> generatePermutations(int n) {
 		if (n < 1 || n > MAX_N) {
-			throw new IllegalArgumentException(
-					"n must be positive and no larger than " + MAX_N);
+			throw new IllegalArgumentException("n must be positive and no larger than " + MAX_N);
 		}
 
 		List<int[]> permutations = new ArrayList<>();
@@ -62,9 +61,9 @@ public final class Permutations {
 	}
 
 	/**
-	 * Recursively generates a list of all permutations containing numbers 1
-	 * through n using Heap's algorithm, and adds a clone of each new
-	 * arrangement to the results list.
+	 * Recursively generates a list of all permutations containing numbers 1 through
+	 * n using Heap's algorithm, and adds a clone of each new arrangement to the
+	 * results list.
 	 * 
 	 * Source: Heap's algorithm on Wikipedia
 	 * 

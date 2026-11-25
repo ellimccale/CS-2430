@@ -56,12 +56,7 @@ public final class HeapSort {
 	 * @param i       the index of the subtree's root
 	 * @param counter the counter for the current sort run
 	 */
-	private static void heapify(
-		int[] array,
-		int n,
-		int i,
-		ComparisonCounter counter
-	) {
+	private static void heapify(int[] array, int n, int i, ComparisonCounter counter) {
 		// Initialize the maximum element as that at the current index
 		int max = i;
 

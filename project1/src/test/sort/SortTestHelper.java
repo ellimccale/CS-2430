@@ -23,8 +23,8 @@ final class SortTestHelper {
 	}
 
 	/**
-	 * Picks a pseudo-random permutation of 1..n. The same n and seed always
-	 * produce the same permutation, so test failures can be reproduced.
+	 * Picks a pseudo-random permutation of 1..n. The same n and seed always produce
+	 * the same permutation, so test failures can be reproduced.
 	 *
 	 * @param n    the size of the permutation
 	 * @param seed the seed for the random number generator
@@ -41,8 +41,7 @@ final class SortTestHelper {
 	 * Returns a sorted copy of the given array, in ascending order.
 	 *
 	 * @param array the array to copy and sort
-	 * @return a new, sorted array containing the same elements as the passed
-	 *         array
+	 * @return a new, sorted array containing the same elements as the passed array
 	 */
 	static int[] sortedCopy(int[] array) {
 		int[] copy = array.clone();

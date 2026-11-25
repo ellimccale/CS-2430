@@ -16,20 +16,10 @@ package main.sets;
  */
 public class UniversalSet {
 
-	private static final String[] ELEMENTS = {
-		"Brigham Young University",
-		"Eagle Gate College",
-		"Ensign College",
-		"Salt Lake Community College",
-		"Snow College",
-		"Southern Utah University",
-		"University of Utah",
-		"Utah State University",
-		"Utah Tech University",
-		"Utah Valley University",
-		"Weber State University",
-		"Westminster University"
-	};
+	private static final String[] ELEMENTS = { "Brigham Young University", "Eagle Gate College", "Ensign College",
+			"Salt Lake Community College", "Snow College", "Southern Utah University", "University of Utah",
+			"Utah State University", "Utah Tech University", "Utah Valley University", "Weber State University",
+			"Westminster University" };
 
 	private UniversalSet() {
 	}
@@ -44,15 +34,15 @@ public class UniversalSet {
 	/**
 	 * Returns the index of the given element in this universal set.
 	 * 
-	 * Matching ignores letter casing and leading or trailing whitespace.
-	 * Partial element names do not match.
+	 * Matching ignores letter casing and leading or trailing whitespace. Partial
+	 * element names do not match.
 	 * 
-	 * Callers of this method must check for -1 before using the result as an
-	 * array index.
+	 * Callers of this method must check for -1 before using the result as an array
+	 * index.
 	 * 
 	 * @param name the element name to look up (may be null)
-	 * @return the zero-based index of the element, or -1 if {@code name} is
-	 * 		   null, blank, or not an element of the set
+	 * @return the zero-based index of the element, or -1 if {@code name} is null,
+	 *         blank, or not an element of the set
 	 */
 	public static int indexOf(String name) {
 		if (name == null) {
@@ -77,7 +67,7 @@ public class UniversalSet {
 	 * @param index the zero-based index of the element
 	 * @return the element name at {@code index}
 	 * @throws IndexOutOfBoundsException if {@code index} is negative or greater
-	 * 	       than or equal to {@code size()}
+	 *                                   than or equal to {@code size()}
 	 */
 	public static String elementAt(int index) {
 		int size = UniversalSet.size();

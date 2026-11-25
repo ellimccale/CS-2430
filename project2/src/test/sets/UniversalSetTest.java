@@ -37,9 +37,9 @@ class UniversalSetTest {
 	@Test
 	@DisplayName("should map every element to the expected index")
 	void every_element_expected_index() {
-	    for (int i = 0; i < UniversalSet.size(); i++) {
-	        assertEquals(i, UniversalSet.indexOf(UniversalSet.elementAt(i)));
-	    }
+		for (int i = 0; i < UniversalSet.size(); i++) {
+			assertEquals(i, UniversalSet.indexOf(UniversalSet.elementAt(i)));
+		}
 	}
 
 	@ParameterizedTest

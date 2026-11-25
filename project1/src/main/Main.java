@@ -52,10 +52,10 @@ public class Main {
 	}
 
 	/**
-	 * Runs each sorting algorithm on every permutation of each n in INPUT_SIZES.
-	 * Prints a table of min, max, and average comparison counts to the console, and
-	 * writes every individual run to the results file. Each permutation is sorted
-	 * once, and that result is used by both outputs.
+	 * Runs each sorting algorithm on every permutation of each n in
+	 * {@code INPUT_SIZES}. Prints a table of min, max, and average comparison
+	 * counts to the console, and writes every individual run to the results file.
+	 * Each permutation is sorted once, and that result is used by both outputs.
 	 *
 	 * @param sortTypes algorithm names mapped to their sort methods, in display
 	 *                  order

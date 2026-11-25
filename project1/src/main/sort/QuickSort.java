@@ -43,12 +43,7 @@ public final class QuickSort {
 	 * @param h       index of the last element in the range (inclusive)
 	 * @param counter the counter for the current sort run
 	 */
-	private static void sort(
-		int[] array,
-		int l,
-		int h,
-		ComparisonCounter counter
-	) {
+	private static void sort(int[] array, int l, int h, ComparisonCounter counter) {
 		if (l < h) {
 			// Final index of the pivot for this range
 			int pi = partition(array, l, h, counter);
@@ -62,24 +57,19 @@ public final class QuickSort {
 	}
 
 	/**
-	 * Partitions the range [l, h] around the last element (the pivot). After
-	 * this call, every element left of the returned index is less than or equal
-	 * to the pivot, every element right of it is greater than the pivot, and
-	 * the pivot sits at the returned index in its final sorted position.
+	 * Partitions the range [l, h] around the last element (the pivot). After this
+	 * call, every element left of the returned index is less than or equal to the
+	 * pivot, every element right of it is greater than the pivot, and the pivot
+	 * sits at the returned index in its final sorted position.
 	 *
 	 * @param array   the array containing the range to partition
 	 * @param l       index of the first element in the range (inclusive)
-	 * @param h       index of the last element in the range (inclusive); also
-	 *                the pivot's starting index
+	 * @param h       index of the last element in the range (inclusive); also the
+	 *                pivot's starting index
 	 * @param counter the counter for the current sort run
 	 * @return the final index of the pivot
 	 */
-	private static int partition(
-		int[] array,
-		int l,
-		int h,
-		ComparisonCounter counter
-	) {
+	private static int partition(int[] array, int l, int h, ComparisonCounter counter) {
 		int pivot = array[h];
 
 		// Index of the smaller element

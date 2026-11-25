@@ -41,12 +41,7 @@ public final class MergeSort {
 	 * @param r       index of the last element in the range (inclusive)
 	 * @param counter the counter for the current sort run
 	 */
-	private static void sort(
-		int[] array,
-		int l,
-		int r,
-		ComparisonCounter counter
-	) {
+	private static void sort(int[] array, int l, int r, ComparisonCounter counter) {
 		if (l >= r) {
 			return;
 		}
@@ -63,8 +58,8 @@ public final class MergeSort {
 	}
 
 	/**
-	 * Merges the two sorted ranges [l, m] and [m + 1, r] of the array into a
-	 * single sorted range [l, r].
+	 * Merges the two sorted ranges [l, m] and [m + 1, r] of the array into a single
+	 * sorted range [l, r].
 	 *
 	 * @param array   the array containing both ranges
 	 * @param l       index of the first element of the left range
@@ -72,13 +67,7 @@ public final class MergeSort {
 	 * @param r       index of the last element of the right range
 	 * @param counter the counter for the current sort run
 	 */
-	private static void merge(
-		int[] array,
-		int l,
-		int m,
-		int r,
-		ComparisonCounter counter
-	) {
+	private static void merge(int[] array, int l, int m, int r, ComparisonCounter counter) {
 		int n1 = m - l + 1;
 		int n2 = r - m;
 
