@@ -34,7 +34,7 @@ public final class MergeSort {
 	}
 
 	/**
-	 * Recursively sorts the range [l, r] of the array.
+	 * Recursively sorts the range {@code [l, r]} of the array.
 	 *
 	 * @param array   the array being sorted
 	 * @param l       index of the first element in the range (inclusive)
@@ -58,8 +58,8 @@ public final class MergeSort {
 	}
 
 	/**
-	 * Merges the two sorted ranges [l, m] and [m + 1, r] of the array into a single
-	 * sorted range [l, r].
+	 * Merges the two sorted ranges {@code [l, m]} and {@code [m + 1, r]} of the
+	 * array into a single sorted range {@code [l, r]}.
 	 *
 	 * @param array   the array containing both ranges
 	 * @param l       index of the first element of the left range

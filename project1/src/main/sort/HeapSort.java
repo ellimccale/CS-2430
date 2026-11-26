@@ -48,8 +48,8 @@ public final class HeapSort {
 	}
 
 	/**
-	 * Sifts the element at index i down until the subtree rooted at i is a
-	 * max-heap.
+	 * Sifts the element at index {@code i} down until the subtree rooted at
+	 * {@code i} is a max-heap.
 	 *
 	 * @param array   the array holding the heap
 	 * @param n       the number of elements in the heap

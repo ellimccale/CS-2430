@@ -23,8 +23,9 @@ final class SortTestHelper {
 	}
 
 	/**
-	 * Picks a pseudo-random permutation of 1..n. The same n and seed always produce
-	 * the same permutation, so test failures can be reproduced.
+	 * Picks a pseudo-random permutation of 1..n. The same {@code n} and
+	 * {@code seed} always produce the same permutation, so test failures can be
+	 * reproduced.
 	 *
 	 * @param n    the size of the permutation
 	 * @param seed the seed for the random number generator

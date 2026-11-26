@@ -125,8 +125,8 @@ public class Main {
 	}
 
 	/**
-	 * Writes the full results to OUTPUT_PATH, creating the output folder if it does
-	 * not exist. Overwrites any existing file.
+	 * Writes the full results to {@code OUTPUT_PATH}, creating the output folder if
+	 * it does not exist. Overwrites any existing file.
 	 *
 	 * @param results the text to write
 	 */

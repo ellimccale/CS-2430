@@ -37,12 +37,12 @@ public class UniversalSet {
 	 * Matching ignores letter casing and leading or trailing whitespace. Partial
 	 * element names do not match.
 	 * 
-	 * Callers of this method must check for -1 before using the result as an array
-	 * index.
+	 * Callers of this method must check for {@code -1} before using the result as
+	 * an array index.
 	 * 
 	 * @param name the element name to look up (may be null)
-	 * @return the zero-based index of the element, or -1 if {@code name} is null,
-	 *         blank, or not an element of the set
+	 * @return the zero-based index of the element, or {@code -1} if {@code name} is
+	 *         null, blank, or not an element of the set
 	 */
 	public static int indexOf(String name) {
 		if (name == null) {

@@ -18,7 +18,7 @@ public final class ArrayUtils {
 	}
 
 	/**
-	 * Swaps the elements of an array at indices x and y.
+	 * Swaps the elements of an array at indices {@code x} and {@code y}.
 	 *
 	 * @param array the array with elements to swap
 	 * @param x     the first index

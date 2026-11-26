@@ -36,7 +36,7 @@ public final class QuickSort {
 	}
 
 	/**
-	 * Recursively sorts the range [l, h] of the array.
+	 * Recursively sorts the range {@code [l, h]} of the array.
 	 *
 	 * @param array   the array being sorted
 	 * @param l       index of the first element in the range (inclusive)
@@ -57,10 +57,10 @@ public final class QuickSort {
 	}
 
 	/**
-	 * Partitions the range [l, h] around the last element (the pivot). After this
-	 * call, every element left of the returned index is less than or equal to the
-	 * pivot, every element right of it is greater than the pivot, and the pivot
-	 * sits at the returned index in its final sorted position.
+	 * Partitions the range {@code [l, h]} around the last element (the pivot).
+	 * After this call, every element left of the returned index is less than or
+	 * equal to the pivot, every element right of it is greater than the pivot, and
+	 * the pivot sits at the returned index in its final sorted position.
 	 *
 	 * @param array   the array containing the range to partition
 	 * @param l       index of the first element in the range (inclusive)

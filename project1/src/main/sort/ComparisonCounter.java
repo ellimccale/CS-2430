@@ -19,7 +19,7 @@ final class ComparisonCounter {
 	 * 
 	 * @param x the first integer to compare
 	 * @param y the second integer to compare
-	 * @return negative if x < y, zero if equal, positive if x > y
+	 * @return negative if {@code x < y}, zero if equal, positive if {@code x > y}
 	 */
 	int compare(int x, int y) {
 		count++;
