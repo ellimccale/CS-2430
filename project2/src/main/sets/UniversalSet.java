@@ -40,9 +40,9 @@ public class UniversalSet {
 	 * Callers of this method must check for {@code -1} before using the result as
 	 * an array index.
 	 * 
-	 * @param name the element name to look up (may be null)
+	 * @param name the element name to look up (may be {@code null})
 	 * @return the zero-based index of the element, or {@code -1} if {@code name} is
-	 *         null, blank, or not an element of the set
+	 *         {@code null}, blank, or not an element of the set
 	 */
 	public static int indexOf(String name) {
 		if (name == null) {

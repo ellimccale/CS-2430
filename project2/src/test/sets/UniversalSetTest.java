@@ -75,17 +75,13 @@ class UniversalSetTest {
 	@Test
 	@DisplayName("should throw an exception if the index is less than 0")
 	void throws_out_of_bounds_exception_for_index_less_than_zero() {
-		assertThrows(IndexOutOfBoundsException.class, () -> {
-			UniversalSet.elementAt(-1);
-		});
+		assertThrows(IndexOutOfBoundsException.class, () -> UniversalSet.elementAt(-1));
 	}
 
 	@Test
 	@DisplayName("should throw an exception if the index is off by one")
 	void throws_out_of_bounds_exception_for_index_off_by_one() {
-		assertThrows(IndexOutOfBoundsException.class, () -> {
-			UniversalSet.elementAt(UniversalSet.size());
-		});
+		assertThrows(IndexOutOfBoundsException.class, () -> UniversalSet.elementAt(UniversalSet.size()));
 	}
 
 }

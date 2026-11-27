@@ -161,13 +161,13 @@ public final class OrdinarySet {
 
 	/**
 	 * Returns the names of the elements in this set, in universal set index
-	 * order, formatted as {@code {A, B, C}}.
+	 * order, formatted as {@code { A, B, C }}.
 	 * 
 	 * @return the element-name listing of this set
 	 */
 	@Override
 	public String toString() {
-		StringJoiner sj = new StringJoiner(", ", "{", "}");
+		StringJoiner sj = new StringJoiner(", ", "{ ", " }");
 
 		for (int i = 0; i < UniversalSet.size(); i++) {
 			if (this.bools[i]) {

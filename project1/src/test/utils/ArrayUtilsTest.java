@@ -42,9 +42,7 @@ class ArrayUtilsTest {
 	@Test
 	@DisplayName("should throw when an index is out of bounds")
 	void swap_array_throws_out_of_bounds() {
-		assertThrows(ArrayIndexOutOfBoundsException.class, () -> {
-			ArrayUtils.swap(array, 0, 10);
-		});
+		assertThrows(ArrayIndexOutOfBoundsException.class, () -> ArrayUtils.swap(array, 0, 10));
 	}
 
 }

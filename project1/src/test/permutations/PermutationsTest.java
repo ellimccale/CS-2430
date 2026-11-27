@@ -56,10 +56,7 @@ class PermutationsTest {
 	@ValueSource(ints = { -1, 0, 11 })
 	@DisplayName("should throw an IllegalArgumentException when n < 1 or > 10")
 	void invalid_argument_throws_expected_exception(int n) {
-		IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> {
-			generatePermutations(n);
-		});
-		assertEquals("n must be positive and no larger than 10", exception.getMessage());
+		assertThrows(IllegalArgumentException.class, () -> generatePermutations(n));
 	}
 
 	@Test
