@@ -1,3 +1,10 @@
+/*
+ * Name:        Elli Steck
+ * Course:      CS-2430, Section 501
+ * Project:     Programming Project 2 – Summer 2026
+ * File:        OrdinarySetTest.java
+ * Description: Unit tests for the OrdinarySet class.
+ */
 package test.sets;
 
 import static org.junit.jupiter.api.Assertions.*;

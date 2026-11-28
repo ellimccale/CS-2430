@@ -33,10 +33,10 @@ public class UniversalSet {
 
 	/**
 	 * Returns the index of the given element in this universal set.
-	 * 
+	 * <p>
 	 * Matching ignores letter casing and leading or trailing whitespace. Partial
 	 * element names do not match.
-	 * 
+	 * <p>
 	 * Callers of this method must check for {@code -1} before using the result as
 	 * an array index.
 	 * 

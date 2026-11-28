@@ -3,7 +3,7 @@
  * Course:      CS-2430, Section 501
  * Project:     Programming Project 2 – Summer 2026
  * File:        UniversalSetTest.java
- * Description: Unit tests for the Universal Set.
+ * Description: Unit tests for the UniversalSet class.
  */
 package test.sets;
 
