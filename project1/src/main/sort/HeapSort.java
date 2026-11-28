@@ -14,7 +14,7 @@ import static main.utils.ArrayUtils.swap;
  * Implements heap sort for arrays of integers, using a max-heap stored in the
  * array itself, and returns the comparison count. This class is not meant to be
  * instantiated.
- *
+ *<p>
  * Source: Heap Sort on GeeksforGeeks
  */
 public final class HeapSort {

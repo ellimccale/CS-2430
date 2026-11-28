@@ -11,7 +11,7 @@ package main.sort;
 /**
  * Implements top-down merge sort for arrays of integers and returns the
  * comparison count. This class is not meant to be instantiated.
- *
+ *<p>
  * Source: Merge Sort on GeeksforGeeks
  */
 public final class MergeSort {

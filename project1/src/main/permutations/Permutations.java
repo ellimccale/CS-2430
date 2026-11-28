@@ -64,7 +64,7 @@ public final class Permutations {
 	 * Recursively generates a list of all permutations containing numbers 1 through
 	 * n using Heap's algorithm, and adds a clone of each new arrangement to the
 	 * results list.
-	 * 
+	 * <p>
 	 * Source: Heap's algorithm on Wikipedia
 	 * 
 	 * @param k        the number of elements to permute

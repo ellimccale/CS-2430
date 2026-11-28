@@ -13,7 +13,7 @@ import static main.utils.ArrayUtils.swap;
 /**
  * Implements shaker sort (or cocktail sort) for arrays of integers and returns
  * the comparison count. This class is not meant to be instantiated.
- * 
+ * <p>
  * Source: Cocktail shaker sort on Wikipedia
  */
 public final class ShakerSort {
